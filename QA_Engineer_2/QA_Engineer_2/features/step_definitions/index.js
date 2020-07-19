@@ -114,4 +114,94 @@ return assert.ok(currentUrl.includes('register'));
 
 })
 
+console.log('-------------------------------- Links on Navigation Bar----------------------------------------');
+
+//verifying home link in Navigation Bar
+When(/^I click on Home Link in Navigation bar$/, async () => {
+
+  return await World.driver.findElement(By.xpath('//a[contains(text(),"Home")]')).click();
+  
+  })
+  
+  
+Then(/^I should be landed on Home page$/, async () => {
+  
+  let currentUrl = await World.driver.getCurrentUrl();
+  console.log(currentUrl);
+  
+  return assert.ok(currentUrl.includes('jobs.economist.com'));
+     
+  })
+
+//verifying Find a job link in Navigation Bar
+When(/^I click on Find a job Link in Navigation bar$/, async () => {
+
+  return await World.driver.findElement(By.xpath('//a[contains(text(),"Find a job")]')).click();
+  
+  })
+  
+  
+Then(/^I should be landed on jobs page$/, async () => {
+  
+  let currentUrl = await World.driver.getCurrentUrl();
+  console.log(currentUrl);
+  
+  return assert.ok(currentUrl.includes('jobs.economist.com/jobs/'));
+     
+  })
+
+  
+//verifying job alerts link in Navigation Bar  
+When(/^I click on job alerts link in Navigation bar$/, async () => {
+
+  return await World.driver.findElement(By.xpath('//a[contains(text(),"Job alerts")]')).click();
+  
+  })
+  
+  
+Then(/^I should be landed on job alerts page$/, async () => {
+  
+  let currentUrl = await World.driver.getCurrentUrl();
+  console.log(currentUrl);
+  
+  return assert.ok(currentUrl.includes('newalert'));
+     
+  })
+
+//verifying search recruiters link in Navigation Bar  
+When(/^I click on search recruiters Link in Navigation bar$/, async () => {
+
+  return await World.driver.findElement(By.xpath('//a[contains(text(),"Search recruiters")]')).click();
+  
+  })
+  
+  
+Then(/^I should be landed on search recruiters page$/, async () => {
+  
+  let currentUrl = await World.driver.getCurrentUrl();
+  console.log(currentUrl);
+  
+  return assert.ok(currentUrl.includes('employers'));
+     
+  })
+
+
+//verifying jobs blog link in Navigation Bar  
+When(/^I click on jobs blog link in Navigation bar$/, async () => {
+
+  return await World.driver.findElement(By.xpath('//a[contains(text(),"Jobs blog")]')).click();
+  
+  })
+  
+  
+Then(/^I should be landed on careers page$/, async () => {
+  
+  let currentUrl = await World.driver.getCurrentUrl();
+  console.log(currentUrl);
+  
+  return assert.ok(currentUrl.includes('careers'));
+     
+  })
+
+  
 
