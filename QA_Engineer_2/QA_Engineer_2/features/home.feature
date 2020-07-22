@@ -73,6 +73,6 @@ Feature: Jobs page
     Given I go to the jobs.economist.com page
     When I click Create Account
     Then I should be landed on Create Account Page
-    When I enter the details Title: Mr First name: Ajay Last name: Lunia Email: ajaylunia12345@gmail.com Password: abc@1234 and confirm Password: abc@1234
+    When I enter the details Title: Mr First name: Ajay Last name: Lunia Email: ajaylunia123456789@gmail.com Password: abc@1234 and confirm Password: abc@1234
     * I check all the conditions and create account
     Then I should see Account Created
