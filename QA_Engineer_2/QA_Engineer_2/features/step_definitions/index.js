@@ -447,7 +447,9 @@ Then(/^I should be landed on LinkedIn economist careers page$/, async () => {
   return (await (await World.driver).switchTo().window((tabs[0])));
   
   })
-
+  
+  
+  //Verify Creation of Account on jobs.economist.com page
   When(/^I enter the details Title: (.*) First name: (.*) Last name: (.*) Email: (.*) Password: (.*) and confirm Password: (.*)$/, async (title, firstName, lastName, email, password, confirmPassword) => {
 
     await snooze(2000);
