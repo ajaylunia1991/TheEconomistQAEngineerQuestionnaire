@@ -447,3 +447,55 @@ Then(/^I should be landed on LinkedIn economist careers page$/, async () => {
   return (await (await World.driver).switchTo().window((tabs[0])));
   
   })
+
+  When(/^I enter the details Title: (.*) First name: (.*) Last name: (.*) Email: (.*) Password: (.*) and confirm Password: (.*)$/, async (title, firstName, lastName, email, password, confirmPassword) => {
+
+    await snooze(2000);
+    
+    await World.driver.findElement(By.id('title')).click();
+    await World.driver.findElement(By.id('title')).sendKeys(title);
+    
+    await World.driver.findElement(By.id('firstname')).click();
+    await World.driver.findElement(By.id('firstname')).sendKeys(firstName);
+    
+    await World.driver.findElement(By.id('lastname')).click();
+    await World.driver.findElement(By.id('lastname')).sendKeys(lastName);
+    
+    await World.driver.findElement(By.id('emailaddress')).click();
+    await World.driver.findElement(By.id('emailaddress')).sendKeys(email);
+    
+    await World.driver.findElement(By.id('regpassword')).click();
+    await World.driver.findElement(By.id('regpassword')).sendKeys(password);
+    
+    await World.driver.findElement(By.id('confirmpassword')).click();
+    await World.driver.findElement(By.id('confirmpassword')).sendKeys(confirmPassword);
+    
+    await snooze(3000);
+    
+    return true;
+    })
+    
+    When(/^I check all the conditions and create account$/, async () => {
+    
+    World.driver.findElement(By.id('rememberme-register')).click();
+    World.driver.findElement(By.id('sitemarketing')).click();
+    World.driver.findElement(By.id('prefertextemails')).click();
+    World.driver.findElement(By.id('agreeTermsAndConds')).click();
+    
+    World.driver.findElement(By.xpath('//input[@value="Create an account"]')).click();
+    await snooze(3000);
+    
+    return true;
+    })
+    
+    Then(/^I should see Account Created$/, async () => {
+    
+    await snooze(3000);
+    
+    return assert.ok(await World.driver.findElement(By.xpath('//*[@id="main"]/div/h1')).isDisplayed());
+    }
+    )
+    
+    
+    
+    
