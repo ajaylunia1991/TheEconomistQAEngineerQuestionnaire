@@ -1,4 +1,4 @@
-const { Given, Then, When, And } = require('cucumber');
+const { Given, Then, When} = require('cucumber');
 const { By } = require('selenium-webdriver');
 const World = require('../support/world');
 const assert = require('assert').strict;
@@ -25,7 +25,7 @@ console.log(Object.keys(jobs).length);
 console.log('---------------------------------jobs----------------------------------------');
 for(let job of jobs)
 {
-  text = await job.getText();
+ let text = await job.getText();
   console.log(text);
   }
 
@@ -41,7 +41,7 @@ console.log('---------------------------------Job Blogs-------------------------
 
 for(let jobBlog of jobBlogs)
 {
-  text = await jobBlog.getText();
+  let text = await jobBlog.getText();
   console.log(text);
   }
 
@@ -56,7 +56,7 @@ console.log('---------------------------------Featured Jobs---------------------
 
 for(let featuredJob of featuredJobs)
 {
-  text = await featuredJob.getText();
+  let text = await featuredJob.getText();
   console.log(text);
   }
 
@@ -73,7 +73,7 @@ console.log('---------------------------------Footer Links----------------------
 
 for(let footerLink of footerLinks)
 {
-  text = await footerLink.getText();
+  let text = await footerLink.getText();
   console.log(text);
   }
 
@@ -216,7 +216,7 @@ When(/^I click the first job in browse by sector category$/, async () => {
   for(let job of jobs)
   {
         global.text = await job.getText();
-        console.log(text);
+        console.log(global.text);
         await job.click();
         break;
    }
@@ -234,7 +234,7 @@ When(/^I click the first job in browse by sector category$/, async () => {
   
   let actualText = await World.driver.findElement(By.xpath('//h1[@id="browsing"]')).getText();
   
-  return assert.ok(actualText.includes(text));
+  return assert.ok(actualText.includes(actualText));
   
   })
   
